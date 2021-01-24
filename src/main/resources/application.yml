@@ -1,0 +1,18 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          reddit:
+            clientId: redditClientId
+            clientSecret: redditClientSecret
+            redirectUri: http://localhost:8080/login/oauth2/code/reddit
+            scope:
+              - identity
+            authorizationGrantType: authorization_code
+        provider:
+          reddit:
+            authorizationUri: https://www.reddit.com/api/v1/authorize
+            tokenUri: https://www.reddit.com/api/v1/access_token
+            userInfoUri: https://oauth.reddit.com/api/v1/me
+            userNameAttribute: name
